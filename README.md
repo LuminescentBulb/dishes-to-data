@@ -14,28 +14,30 @@ This is important since people might want to know what nutritional value corresp
 There are two original datasets, `recipes` and `ratings`, both of whose columns are listed below:
 
 **RECIPES**
-| Column | Description |
-| ----------- | ----------- |
-| 'name' | Recipe name |
-| 'id' | Recipe ID |
-| ''minutes' | Minutes to prepare recipe |
-| 'contributor_id' | User ID who submitted this recipe |
-| 'submitted' | Date recipe was submitted |
-| 'tags' | Food.com tags for recipe |
-| 'nutrition' | Nutrition information in the form [calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV)]; PDV stands for “percentage of daily value” |
-| 'n_steps' | Number of steps in recipe |
-| 'steps' | Text for recipe steps, in order |
-| 'description' | User-provided description |
+| Column         | Description                                                                                                                                           |
+|----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 'name'        | Recipe name                                                                                                                                            |
+| 'id'          | Recipe ID                                                                                                                                              |
+| 'minutes'     | Minutes to prepare recipe                                                                                                                              |
+| 'contributor_id' | User ID who submitted this recipe                                                                                                                   |
+| 'submitted'   | Date recipe was submitted                                                                                                                              |
+| 'tags'        | Food.com tags for recipe                                                                                                                               |
+| 'nutrition'   | Nutrition information in the form [calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV)]; PDV stands for “percentage of daily value” |
+| 'n_steps'     | Number of steps in recipe                                                                                                                              |
+| 'steps'       | Text for recipe steps, in order                                                                                                                        |
+| 'description' | User-provided description                                                                                                                              |
+
 
 
 **RATINGS**
-| Column | Description |
-| ----------- | ----------- |
-| 'user_id' | User ID |
-| 'recipe_id' | Recipe ID |
-| 'date' | Date of interaction |
-| 'rating' | Rating given |
-| 'review' | Review text |
+| Column     | Description           |
+|------------|-----------------------|
+| 'user_id'  | User ID               |
+| 'recipe_id' | Recipe ID            |
+| 'date'     | Date of interaction   |
+| 'rating'   | Rating given          |
+| 'review'   | Review text           |
+
 
 ## Data Cleaning and Exploratory Data Analysis
 We will first merge the two datasets based on recipe ID such that the new dataset will contain recipes the original recipe dataset
