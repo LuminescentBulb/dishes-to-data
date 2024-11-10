@@ -1,6 +1,3 @@
-# Dishes to Data
-An Analysis of Recipes and Ratings
-by Darren Dong & Taemin Kim
 ## Introduction
 In this project we examine over 80,000 recipes and ratings posted on the website [food.com](https://food.com) since 2008. 
 In particular, the recipes dataset contains most importantly the name, ingredients, nutritional values, description and the steps, which we will use to answer
