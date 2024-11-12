@@ -4,3 +4,4 @@ plugins:
 
 title: Dishes to Data
 description: An Analysis of Recipes and Ratings
+markdown: kramdown
