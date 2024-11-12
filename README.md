@@ -13,7 +13,10 @@ This is important since people might want to know what nutritional value corresp
 
 There are two original datasets, `recipes` and `ratings`, both of whose columns are listed below:
 
-**RECIPES**
+---
+layout: post
+title: "Recipes"
+---
 | Column | Description |
 | --- | --- |
 | 'name' | Recipe name |
@@ -29,7 +32,10 @@ There are two original datasets, `recipes` and `ratings`, both of whose columns 
 
 
 
-**RATINGS**
+---
+layout: post
+title: "Ratings"
+---
 | Column     | Description|
 | --- | --- |
 | 'user_id'  | User ID|
