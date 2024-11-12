@@ -17,6 +17,7 @@ There are two original datasets, `recipes` and `ratings`, both of whose columns 
 layout: post
 title: "Recipes"
 ---
+
 | Column | Description |
 | --- | --- |
 | 'name' | Recipe name |
@@ -36,6 +37,7 @@ title: "Recipes"
 layout: post
 title: "Ratings"
 ---
+gi
 | Column     | Description|
 | --- | --- |
 | 'user_id'  | User ID|
