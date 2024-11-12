@@ -37,7 +37,7 @@ title: "Recipes"
 layout: post
 title: "Ratings"
 ---
-gi
+
 | Column     | Description|
 | --- | --- |
 | 'user_id'  | User ID|
