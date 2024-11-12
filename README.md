@@ -14,8 +14,8 @@ This is important since people might want to know what nutritional value corresp
 There are two original datasets, `recipes` and `ratings`, both of whose columns are listed below:
 
 **RECIPES**
-| Column         | Description                                                                                                                                           |
-|----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Column         | Description   |
+| --- | --- |
 | 'name'        | Recipe name                                                                                                                                            |
 | 'id'          | Recipe ID                                                                                                                                              |
 | 'minutes'     | Minutes to prepare recipe                                                                                                                              |
@@ -31,7 +31,7 @@ There are two original datasets, `recipes` and `ratings`, both of whose columns 
 
 **RATINGS**
 | Column     | Description           |
-|------------|-----------------------|
+| --- | --- |
 | 'user_id'  | User ID               |
 | 'recipe_id' | Recipe ID            |
 | 'date'     | Date of interaction   |
