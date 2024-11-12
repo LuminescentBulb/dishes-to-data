@@ -14,17 +14,17 @@ This is important since people might want to know what nutritional value corresp
 There are two original datasets, `recipes` and `ratings`, both of whose columns are listed below:
 
 **RECIPES**
-| Column         | Description   |
+| Column | Description   |
 | --- | --- |
-| 'name'        | Recipe name|
-| 'id'          | Recipe ID|
-| 'minutes'     | Minutes to prepare recipe|
+| 'name' | Recipe name|
+| 'id' | Recipe ID|
+| 'minutes' | Minutes to prepare recipe|
 | 'contributor_id' | User ID who submitted this recipe|
-| 'submitted'   | Date recipe was submitted|
-| 'tags'        | Food.com tags for recipe|
-| 'nutrition'   | Nutrition information in the form [calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV)]; PDV stands for “percentage of daily value” |
-| 'n_steps'     | Number of steps in recipe|
-| 'steps'       | Text for recipe steps, in order|
+| 'submitted' | Date recipe was submitted|
+| 'tags' | Food.com tags for recipe|
+| 'nutrition' | Nutrition information in the form [calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV)]; PDV stands for “percentage of daily value” |
+| 'n_steps' | Number of steps in recipe|
+| 'steps' | Text for recipe steps, in order|
 | 'description' | User-provided description|
 
 
@@ -40,6 +40,11 @@ There are two original datasets, `recipes` and `ratings`, both of whose columns 
 
 
 ## Data Cleaning and Exploratory Data Analysis
+We will first merge the two datasets into one and clean the dataset for further analysis.
+### Cleaning
+
+
+
 We will first merge the two datasets based on recipe ID such that the new dataset will contain recipes the original recipe dataset
 as well as columns that have data about the ratings. In all cases of 0 ratings, we replace it with `np.nan` so the values get ignored instead of dragging the average score down and malforming the data. Then we will aggregate it such that each recipe will have the average rating of the recipe. We then dropped all the individual ratings as well as duplicate user ID's to form a dataset that had one row of unique recipe with an average rating value. 
 
