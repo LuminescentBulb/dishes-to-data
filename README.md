@@ -63,7 +63,9 @@ The first 5 rows of the dataframe is shown below:
   width="800"
   height="600"
   frameborder="0"
+  style="overflow-x: auto; white-space: nowrap;"
 ></iframe>
+
 
 
 

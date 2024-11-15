@@ -1,0 +1,28 @@
+/* assets/table_styles.css */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+  }
+  
+  table, th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    text-align: left;
+  }
+  
+  td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px; /* Adjust as necessary */
+  }
+  
+  tr:nth-child(even) {background-color: #f9f9f9;}
+  tr:hover {background-color: #f1f1f1;}
+  
