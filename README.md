@@ -7,26 +7,26 @@ In that regard, the separate ratings dataset provides us the recipe ID to which 
 In order to answer our question we will first clean and explore the data. Then we will analyze how our data cleansing potentially affected the data.
 
 Once the data is cleaned and explored, we will seek to answer the central question regarding this dataset. That is, which nutritional value, among 
-calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV) have the greatest effect on the rating of a recipe? With that we will build a model that predicts ratings using those individual nutritional values and maybe more [EDIT THIS]. IF WE HAVE TIME USE TF-IDF TO FIND RECIPE GIVEN INGREDIENTS
+calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV) have the greatest effect on the rating of a recipe? With that we will build a model that predicts ratings using those individual nutritional values.
 
 This is important since people might want to know what nutritional value corresponds to better ratings among people and how they may want to adjust their recipe in order to receive higher ratings. This will be also good for public health officials in understanding what balance of nutrients appeal to people. 
 
-There are two original datasets, `recipes` and `ratings`, both of whose columns are listed below:
+There are two original datasets, `Recipes` and `Ratings`, both of whose columns are listed below:
 
 **Recipes**
 
 | Column | Description |
 | --- | --- |
-| 'name' | Recipe name |
-| 'id' | Recipe ID |
-| 'minutes' | Minutes to prepare recipe |
-| 'contributor_id' | User ID who submitted this recipe |
-| 'submitted' | Date recipe was submitted |
-| 'tags' | Food.com tags for recipe |
-| 'nutrition' | Nutrition information in the form [calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV)]; PDV stands for “percentage of daily value” |
-| 'n_steps' | Number of steps in recipe |
-| 'steps' | Text for recipe steps, in order |
-| 'description' | User-provided description |
+| `'name'` | Recipe name |
+| `'id'` | Recipe ID |
+| `'minutes'` | Minutes to prepare recipe |
+| `'contributor_id'` | User ID who submitted this recipe |
+| `'submitted'` | Date recipe was submitted |
+| `'tags'` | Food.com tags for recipe |
+| `'nutrition'` | Nutrition information in the form [calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV)]; PDV stands for “percentage of daily value” |
+| `'n_steps'` | Number of steps in recipe |
+| `'steps'` | Text for recipe steps, in order |
+| `'description'` | User-provided description |
 
 
 
@@ -34,16 +34,36 @@ There are two original datasets, `recipes` and `ratings`, both of whose columns 
 
 | Column     | Description|
 | --- | --- |
-| 'user_id'  | User ID|
-| 'recipe_id' | Recipe ID |
-| 'date'     | Date of interaction |
-| 'rating'   | Rating given |
-| 'review'   | Review text |
+| `'user_id'`  | User ID|
+| `'recipe_id'` | Recipe ID |
+| `'date'`     | Date of interaction |
+| `'rating'`   | Rating given |
+| `'review'`   | Review text |
 
 
 ## Data Cleaning and Exploratory Data Analysis
 We will first merge the two datasets into one and clean the dataset for further analysis.
 ### Cleaning
+1. We start by left merging the `Recipes` and `Ratings` datasets by `contributer_id` and `user_id` in  `Recipes` and `Ratings` respectively. The resulting dataframe is called `raw_food`.
+
+2. We then fill all ratings of 0 with `np.nan` since they are not valid ratings in a 1-5 scale and thus should be ignored in future calculation using ratings.
+
+3. We then find the average rating per recipe as a Series as `avg_rating`.
+
+4. We inner merge the resulting Series back into the `raw_food`, both on `recipe_id`. 
+
+5. We then drop duplicate columns with duplicate `recipe_id` so we only have one `avg_rating` per recipe.
+
+6. We then drop the individual `rating` since that data will not be necessary for further analysis.
+
+The first 5 rows of the dataframe is shown below:
+
+<iframe
+  src="assets/raw_food.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 
 
