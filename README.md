@@ -72,11 +72,11 @@ The first few rows of the dataframe is shown below:
 | 1 in canada chocolate chip cookies | 45 | 12 | 11 | 5.0 | 595.1 | 46.0 | 211.0 | 22.0 | 13.0 | 51.0 | 26.0 |
 
 ### Missingness Analysis
+Since missing average ratings would mean the recipes with missing ratings wouldn't be used, we had to make the choice of how to handle the missing values. 
 
-UNDER
-CONSTRUCTION !!!
+We decided to assume that ratings were missing completely at random since it didn't really make sense to assume that it was due to any of the other columns. It seemed more of a problem that they failed to be presented to recipe viewers in general, perhaps due to being a duplicate, or generally unknown. 
 
-YAP A LOT ABOUT HOW RATINGS ARE MISSING COMPLETELY AT RANDOM!!!
+Since they are missing completely at random, we decided to simply drop the missing values, which had a mostly insignificant effect on the total data since there are more than 80,000 rows, of which only around 4,000 rows had missing average rating values.  
 
 ## Exploratory Data Analysis
 ### Univariate Analysis
