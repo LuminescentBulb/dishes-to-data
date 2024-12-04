@@ -1,3 +1,5 @@
+# Dishes to Data
+By Darren Dong & Taemin Kim
 # Introduction
 In this project we examine over 80,000 recipes and ratings posted on the website [food.com](https://food.com) since 2008. 
 In particular, the recipes dataset contains most importantly the name, ingredients, nutritional values, description and the steps, which we will use to answer
@@ -151,7 +153,26 @@ The metric we will use to evaluate the model are mean squared errors and R^2 giv
 # Baseline Model
 We created a regression model with 5 degree polynomial features using the following features: number of steps, number of ingredients, calories, total fat, sugar, sodium, protein, saturated fats, and carbohydrates, all of which are quantitative. These features would be used to predict the average rating of a recipe, giving an insight into what kind of nutrients people prioritize in their recipes as well as in simplicity. 
 Given the quantitative nature of all our features, we did not have to encode any features.
-However, the performance of our model was disastrous, with a mean squared error of 2,405,286.62 on the test set and a R^2 value of [PUT IT HERE I THINK]. We reckon that the model overfit to the training data too much, as the training mean squared error was low at a value of 0.39. 
 
-
+However, the performance of our model was disastrous, with a mean squared error of 2,357,910.16 on the test set and a R^2 value of -5,774,359.17. 
+We reckon that the model overfit to the training data too much, as the training mean squared error was low at a value of 0.39. 
 # Final Model
+
+Given the rather disastrous performance of our baseline model, we decided to look to what new features and regression methods we could use 
+in order to improve the performance of our regression model. 
+After some investigation we decided to create a few more features. 
+
+We created a new feature by applying np.log1p to every feature to transform them. The general association between the features and rating seemed to 
+resemble the bottom left quadrant of the Tukey Mosteller Bulge Diagram, so we decided that applying a log to the features would linearize it better.
+Another feature we created are all the polynomials raised to the power of 2, a hyperparameter selected by GridSearchCV. We believed that this polynomial feature 
+would help us capture non-linear relationships better, since none of the associations were very linear naturally. 
+
+In our model,  we also used RobustScaler to diminish the effects of outliers from our selected features and to regularize them. 
+We then use ridge regression to alleviate the overfitting issue we had in the baseline model.
+To find the optimal parameter for both the degree of the polynomials as well as the alpha value of the ridge regressor, we used GridSearchCV,
+which chose a degree of 2 and a ridge alpha value of 100. 
+
+The final model certainly improved over the baseline model. It had an MSE of 0.4073 and R^2 value of 0.0023 on the test set. 
+The higher values on both metrics indicate a performance increase!
+
+### Extras
