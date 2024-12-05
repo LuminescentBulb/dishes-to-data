@@ -154,8 +154,8 @@ The metric we will use to evaluate the model are mean squared errors and R^2 giv
 We created a regression model with 5 degree polynomial features using the following features: number of steps, number of ingredients, calories, total fat, sugar, sodium, protein, saturated fats, and carbohydrates, all of which are quantitative. These features would be used to predict the average rating of a recipe, giving an insight into what kind of nutrients people prioritize in their recipes as well as in simplicity. 
 Given the quantitative nature of all our features, we did not have to encode any features.
 
-However, the performance of our model was disastrous, with a mean squared error of 2,357,910.16 on the test set and a R^2 value of -5,774,359.17. 
-We reckon that the model overfit to the training data too much, as the training mean squared error was low at a value of 0.39. 
+However, the performance of our model was fairly good, with a mean squared error of 0.4083 on the test set and a R^2 value of -0.000092.
+But the negative R^2 value indicated that the model still underperformed in relation to just fitting the trend line.
 # Final Model
 
 Given the rather disastrous performance of our baseline model, we decided to look to what new features and regression methods we could use 
@@ -174,5 +174,3 @@ which chose a degree of 2 and a ridge alpha value of 100.
 
 The final model certainly improved over the baseline model. It had an MSE of 0.4073 and R^2 value of 0.0023 on the test set. 
 The higher values on both metrics indicate a performance increase!
-
-### Extras
