@@ -151,7 +151,7 @@ The values we will have available at the time of prediction are the nutritional 
 
 The metric we will use to evaluate the model are mean squared errors and R^2 given that the MSE offers us clues as to how big the error is and R^2 will give us clues as to how unfit the model is to the data. 
 # Baseline Model
-We created a regression model with 5 degree polynomial features using the following features: number of steps, number of ingredients, calories, total fat, sugar, sodium, protein, saturated fats, and carbohydrates, all of which are quantitative. These features would be used to predict the average rating of a recipe, giving an insight into what kind of nutrients people prioritize in their recipes as well as in simplicity. 
+We created a linear regression model using the following features: number of steps, number of ingredients, calories, total fat, sugar, sodium, protein, saturated fats, and carbohydrates, all of which are quantitative. These features would be used to predict the average rating of a recipe, giving an insight into what kind of nutrients people prioritize in their recipes as well as in simplicity. 
 Given the quantitative nature of all our features, we did not have to encode any features.
 
 However, the performance of our model was fairly good, with a mean squared error of 0.4083 on the test set and a R^2 value of -0.000092.
